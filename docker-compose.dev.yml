@@ -1,20 +1,20 @@
 version: "3"
 
 services:
-  frontend:
-    env_file:
-      - ./frontend/.env
-    build:
-      context: frontend
-      dockerfile: Dockerfile.dev
-    container_name: web
-    restart: always
-    volumes:
-      - ./frontend/:/app
-      - /app/node_modules
-      - /app/.next
-    ports:
-      - 3000:3000
+  # frontend:
+  #   env_file:
+  #     - ./frontend/.env
+  #   build:
+  #     context: frontend
+  #     dockerfile: Dockerfile.dev
+  #   container_name: web
+  #   restart: always
+  #   volumes:
+  #     - ./frontend/:/app
+  #     - /app/node_modules
+  #     - /app/.next
+  #   ports:
+  #     - 3000:3000
   backend-core:
     env_file:
       - ./backend/core/.env
@@ -25,6 +25,6 @@ services:
     restart: always
     volumes:
       - ./backend/core/:/code/
-      - ~/.config/gcloud:/root/.config/gcloud
+      # - ~/.config/gcloud:/root/.config/gcloud
     ports:
       - 5050:5050
